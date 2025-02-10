@@ -9,7 +9,7 @@ public class Main {
             System.out.println("Enter first number: ");
             double num1 = sc.nextDouble();
 
-            System.out.println("Enter operator (+, -, *, /): ");
+            System.out.println("Enter operator (+, -, *, /, %): ");
             char op = sc.next().charAt(0);
 
             System.out.println("Enter second number: ");
@@ -40,6 +40,9 @@ public class Main {
             case '/':
                 if (num2 == 0) throw new ArithmeticException("Division by zero is not allowed!");
                 return num1 / num2;
+            case '%':
+                if (num2 == 0) throw new ArithmeticException("Modulo by zero is not allowed!");
+                return num1 % num2;
             default:
                 throw new IllegalArgumentException("Invalid operator! Use +, -, *, /");
         }
