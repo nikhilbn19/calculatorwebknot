@@ -11,6 +11,18 @@ public class Main {
         else return 2; // Multiplication and division have higher precedence
     }
 
+    private int applyOperand(char op, int a, int b) {
+        switch (op) {
+            case '+': return a + b; // Addition
+            case '-': return a - b; // Subtraction
+            case '*': return a * b; // Multiplication
+            case '/':
+                if (b == 0) throw new ArithmeticException("Division by zero is not allowed!"); // Handle division by zero
+                return a / b; // Division
+            default: throw new IllegalArgumentException("Invalid operator: " + op); // Handle invalid operators
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
